@@ -42,7 +42,6 @@ class Question extends Component {
         <div className="App">
           <form>
             <Choices firstValue={this.state.countryChoices[0].capital} secondValue={this.state.countryChoices[1].capital} thirdValue={this.state.countryChoices[2].capital} fourthValue={this.state.countryChoices[3].capital} compareValue={this.state.targetCountry.capital} question={this.state.targetCountry.country} />
-            {/* <Choices firstValue={this.state.countryChoices[0].country} secondValue={this.state.countryChoices[1].country} thirdValue={this.state.countryChoices[2].country} fourthValue={this.state.countryChoices[3].country} compareValue={this.state.targetCountry.capital}/> */}
           </form>
         </div>
       );
