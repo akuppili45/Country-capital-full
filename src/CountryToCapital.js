@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Choices from './Choices';
 import shuffle from 'shuffle-array';
-class Question extends Component {
+class CountryToCapital extends Component {
   constructor(props){
     super(props);
     this.state = {questionSetIndex: 0, selectedOption: '', numberCorrect: 0, questionSet: [], possibleAnswerChoices: [], rightAnswer: '', question: ''};
@@ -83,4 +82,4 @@ class Question extends Component {
   }
 }
 
-export default Question;
+export default CountryToCapital;
