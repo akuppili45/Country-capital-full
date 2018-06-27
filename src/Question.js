@@ -35,21 +35,6 @@ class Question extends Component {
           let setOfQuestionsObj = {questionSet: fullQuestions, possibleAnswerChoices: shuffle(fullQuestions[this.state.questionSetIndex].possibleAnswers), rightAnswer: fullQuestions[this.state.questionSetIndex].rightAnswer, question: fullQuestions[this.state.questionSetIndex].quest};
           this.setState(setOfQuestionsObj);
           console.log(this.state);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           // let question = {choices1: [], quesAns: {}};//later change to array
           // //Array of random indexes to point to 4 random integer values
           // let randomIndexes = [];
