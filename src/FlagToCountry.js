@@ -51,7 +51,7 @@ class FlagToCountry extends Component{
           return (
             <div className="App">
               <form>
-              <h1>{this.state.question}</h1>
+              <img src={this.state.question}/>
              <label>
                <input type='radio' value={this.state.possibleAnswerChoices[0]} checked={this.state.selectedOption === this.state.possibleAnswerChoices[0]} onChange={this.handleRadioChange}/>
                {this.state.possibleAnswerChoices[0]}
