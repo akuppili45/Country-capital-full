@@ -34,28 +34,6 @@ class Question extends Component {
           });
           let setOfQuestionsObj = {questionSet: fullQuestions, possibleAnswerChoices: shuffle(fullQuestions[this.state.questionSetIndex].possibleAnswers), rightAnswer: fullQuestions[this.state.questionSetIndex].rightAnswer, question: fullQuestions[this.state.questionSetIndex].quest};
           this.setState(setOfQuestionsObj);
-          console.log(this.state);
-          // let question = {choices1: [], quesAns: {}};//later change to array
-          // //Array of random indexes to point to 4 random integer values
-          // let randomIndexes = [];
-          // //fill array randomIndexes with 4 random integers that are different
-          // while(randomIndexes.length < 4){
-          //   let randomNumber = Math.floor(Math.random() * countryData.length);
-          //   if(randomIndexes.indexOf(randomNumber) > -1){
-          //     continue;
-          //   }
-          //   randomIndexes[randomIndexes.length] = randomNumber;
-          // }
-          // choices = Array(randomIndexes.length).fill().map((value, index) => {
-          //   return countryData[randomIndexes[index]];
-          // });
-          // console.log(choices);
-          // let target = choices[Math.floor(Math.random() * choices.length)];
-          // console.log(target);
-          // question = {choices1: choices, quesAns: target};
-          // let newState = {countryChoices: question.choices1, targetCountry: question.quesAns};
-          // this.setState(newState);
-          // console.log(this.state);
       });
   }
   handleRadioChange(e){
@@ -63,19 +41,11 @@ class Question extends Component {
   }
   handleSubmit(e){
     e.preventDefault();
-    // console.log(`You have selected ${this.state.selectedOption}`);
-    //this.props.compareValue should be target capital in App.js
-    // if(this.state.targetCountry.capital === this.state.selectedOption){
-    //     this.setState({numberCorrect: this.state.numberCorrect + 1});
-    // }
-    //this.setState({questionSetIndex: this.state.questionSetIndex + 1, possibleAnswerChoices: this.state.questionSet[this.state.questionSetIndex+1].possibleAnswers, rightAnswer: this.state.questionSet[this.state.questionSetIndex+1].rightAnswer});
-    
     let newState = {questionSetIndex: this.state.questionSetIndex + 1, possibleAnswerChoices: this.state.questionSet[this.state.questionSetIndex+1].possibleAnswers, rightAnswer: this.state.questionSet[this.state.questionSetIndex+1].rightAnswer, question: this.state.questionSet[this.state.questionSetIndex+1].quest};
     if(this.state.selectedOption === this.state.rightAnswer){
       newState = {numberCorrect: this.state.numberCorrect + 1, questionSetIndex: this.state.questionSetIndex + 1, possibleAnswerChoices: this.state.questionSet[this.state.questionSetIndex+1].possibleAnswers, rightAnswer: this.state.questionSet[this.state.questionSetIndex+1].rightAnswer, question: this.state.questionSet[this.state.questionSetIndex+1].quest};
     }
     this.setState(newState);
-    
   }
   render() {
     if(this.state.possibleAnswerChoices.length != 0){
@@ -101,7 +71,6 @@ class Question extends Component {
          </label>
          <button onClick={this.handleSubmit}>Submit</button>
          <div>{this.state.numberCorrect}</div>
-            {/* <Choices firstValue={this.state.countryChoices[0].capital} secondValue={this.state.countryChoices[1].capital} thirdValue={this.state.countryChoices[2].capital} fourthValue={this.state.countryChoices[3].capital} compareValue={this.state.targetCountry.capital} question={this.state.targetCountry.country} /> */}
           </form>
         </div>
       );
