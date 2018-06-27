@@ -6,7 +6,7 @@ import shuffle from 'shuffle-array';
 class Question extends Component {
   constructor(props){
     super(props);
-    this.state = {questionSetIndex: 0, selectedOption: '', numberCorrect: 0, questionSet: [], countryChoices: [], targetCountry: {}, possibleAnswerChoices: [], rightAnswer: '', question: ''};
+    this.state = {questionSetIndex: 0, selectedOption: '', numberCorrect: 0, questionSet: [], possibleAnswerChoices: [], rightAnswer: '', question: ''};
     this.handleRadioChange = this.handleRadioChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
