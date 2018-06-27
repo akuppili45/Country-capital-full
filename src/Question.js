@@ -84,9 +84,12 @@ class Question extends Component {
     //     this.setState({numberCorrect: this.state.numberCorrect + 1});
     // }
     //this.setState({questionSetIndex: this.state.questionSetIndex + 1, possibleAnswerChoices: this.state.questionSet[this.state.questionSetIndex+1].possibleAnswers, rightAnswer: this.state.questionSet[this.state.questionSetIndex+1].rightAnswer});
-    this.setState({questionSetIndex: this.state.questionSetIndex + 1, possibleAnswerChoices: this.state.questionSet[this.state.questionSetIndex+1].possibleAnswers, rightAnswer: this.state.questionSet[this.state.questionSetIndex+1].rightAnswer, question: this.state.questionSet[this.state.questionSetIndex+1].quest});
-    console.log(this.state);
-
+    
+    let newState = {questionSetIndex: this.state.questionSetIndex + 1, possibleAnswerChoices: this.state.questionSet[this.state.questionSetIndex+1].possibleAnswers, rightAnswer: this.state.questionSet[this.state.questionSetIndex+1].rightAnswer, question: this.state.questionSet[this.state.questionSetIndex+1].quest};
+    if(this.state.selectedOption === this.state.rightAnswer){
+      newState = {numberCorrect: this.state.numberCorrect + 1, questionSetIndex: this.state.questionSetIndex + 1, possibleAnswerChoices: this.state.questionSet[this.state.questionSetIndex+1].possibleAnswers, rightAnswer: this.state.questionSet[this.state.questionSetIndex+1].rightAnswer, question: this.state.questionSet[this.state.questionSetIndex+1].quest};
+    }
+    this.setState(newState);
     
   }
   render() {
