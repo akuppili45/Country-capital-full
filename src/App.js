@@ -1,37 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Choices from './Choices';
+import { connect } from "react-redux";
 import CountryToCapital from './CountryToCapital';
-import FlagToCountry from './FlagToCountry';
+import { requestCountries, receiveCountries, fetchCountries } from './actions';
 class App extends Component {
-  constructor(props){
-    super(props);
-    this.state = {mode: ''};
+  componentWillMount(){
+    const { selectedGameMode, dispatch } = this.props;
+    dispatch(fetchCountries(selectedGameMode));
   }
   render() {
-    if(this.state.mode === 'Country-Capital'){
-      return (
-        <div className="App">
-          <CountryToCapital />
-        </div>
-      );
-    }
-    else if(this.state.mode === 'Flag-Country'){
-      return (
-        <div className="App">
-          <FlagToCountry />
-        </div>
+    const { showData } = this.props;
+    if(showData.length != 0 ){
+      return(
+        <h1>{showData[0].question}</h1>
       );
     }
     return (
-      <div className="App">
-        <h1>Welcome to the Country Guessing Game!!</h1>
-        <button onClick={() => this.setState({mode: 'Country-Capital'})}>Country-Capital</button>
-        <button onClick={() => this.setState({mode: 'Flag-Country'})}>Flag-Country</button>
-      </div>
+      <div></div>
     );
   }
 }
-
-export default App;
+const mapStateToProps = state => state;
+export default connect(mapStateToProps)(App);
