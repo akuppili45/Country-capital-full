@@ -1,5 +1,5 @@
 import { CHANGE_GAME_MODE, ANSWER_QUESTION, REQUEST_COUNTRY_DATA, RECEIVE_COUNTRY_DATA,
-SCORE, GAME_MODE } from '../actions';
+SCORE, GAME_MODE, GO_TO_NEXT_QUESTION } from '../actions';
 import { combineReducers } from '../../node_modules/redux';
 import shuffle from 'shuffle-array';
 
@@ -38,12 +38,15 @@ function showData(state=[], action){
 }
 function showCurrentQuestion(state=0, action){
     switch(action.type){
-        
+        case GO_TO_NEXT_QUESTION:
+            return state+1;
+        default: return state;
     }
 }
 const rootReducer = combineReducers({
     selectedGameMode,
-    showData
+    showData,
+    showCurrentQuestion
 });
 export default rootReducer;
 

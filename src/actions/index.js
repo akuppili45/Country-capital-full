@@ -9,6 +9,7 @@ export const GAME_MODE = {
 };
 export const SELECT_ANSWER = "SELECT_ANSWER";
 export const SUBMIT_ANSWER = "SUBMIT_ANSWER";
+export const GO_TO_NEXT_QUESTION = "GO_TO_NEXT_QUESTION";
 export const requestCountries = gameMode => ({type: REQUEST_COUNTRY_DATA, gameMode});
 
 export const receiveCountries = (gameMode, json) => ({
@@ -25,6 +26,7 @@ export const fetchCountries = gameMode => dispatch => {
     return fetch('https://restcountries.eu/rest/v2/all').then(results => results.json())
         .then(data => dispatch(receiveCountries(gameMode, data))); //data is array of countries
 }
+export const goToNextQuestion = number => ({type: GO_TO_NEXT_QUESTION, number});
 export const changeGameMode = gameMode => ({type: CHANGE_GAME_MODE, gameMode});
 export const showScore = score => ({type: SCORE, score});
 
