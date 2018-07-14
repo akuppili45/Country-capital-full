@@ -17,6 +17,8 @@ export const receiveCountries = (gameMode, json) => ({
     countries: json
 });
 
+
+
 export const fetchCountries = gameMode => dispatch => {
     //loading sign: dispatch(requestCountries(gameMode));
     

@@ -5,7 +5,7 @@ import shuffle from 'shuffle-array';
 
 function selectedGameMode(state=GAME_MODE.START, action){
     switch(action.type){
-        case GAME_MODE.COUNTRY_TO_CAPITAL:
+        case CHANGE_GAME_MODE:
             return action.gameMode;
         default: return state;
     }
@@ -32,10 +32,13 @@ function showData(state=[], action){
                     ])
                 }
             });
-            
-
             return questionsAndRightAnswers;
         default: return state;
+    }
+}
+function showCurrentQuestion(state=0, action){
+    switch(action.type){
+        
     }
 }
 const rootReducer = combineReducers({
