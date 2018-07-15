@@ -10,14 +10,14 @@ import Question from './Question';
 import QuestionContent from '../containers/QuestionContent';
 
 
-const loggerMiddleware = createLogger();
-const store = createStore(
-    rootReducer,
-    applyMiddleware(
-      thunkMiddleware, // lets us dispatch() functions
-      loggerMiddleware // neat middleware that logs actions
-    )
-  )
+// const loggerMiddleware = createLogger();
+// const store = createStore(
+//     rootReducer,
+//     applyMiddleware(
+//       thunkMiddleware, // lets us dispatch() functions
+//       loggerMiddleware // neat middleware that logs actions
+//     )
+//   )
 class Root extends Component {
     render() {
       return (
