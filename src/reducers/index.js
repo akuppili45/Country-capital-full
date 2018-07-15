@@ -2,6 +2,7 @@ import { CHANGE_GAME_MODE, ANSWER_QUESTION, REQUEST_COUNTRY_DATA, RECEIVE_COUNTR
 SCORE, GAME_MODE, GO_TO_NEXT_QUESTION } from '../actions';
 import { combineReducers } from '../../node_modules/redux';
 import shuffle from 'shuffle-array';
+import { reducer as formReducer } from "redux-form";
 
 function selectedGameMode(state=GAME_MODE.START, action){
     switch(action.type){
@@ -46,7 +47,8 @@ function showCurrentQuestion(state=0, action){
 const rootReducer = combineReducers({
     selectedGameMode,
     showData,
-    showCurrentQuestion
+    showCurrentQuestion,
+    form: formReducer
 });
 export default rootReducer;
 

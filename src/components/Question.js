@@ -1,10 +1,14 @@
 import React from 'react';
 import {GAME_MODE} from '../actions';
-
-const Question = ({questions, question, changeGameMode}) => {
-    changeGameMode(GAME_MODE.COUNTRY_TO_CAPITAL);
+import FormContainer from '../forms/forms.container'
+const Question = props => {
+    props.changeGameMode(GAME_MODE.COUNTRY_TO_CAPITAL);
+    // console.log(props);
     return(
-        <h1>{question}</h1>
+        <div>
+        <h1>{props.question}</h1>
+        <FormContainer />
+        </div>
     );
 };
 export default Question;
