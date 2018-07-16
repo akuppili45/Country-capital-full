@@ -6,10 +6,24 @@ import thunkMiddleware from 'redux-thunk';
 import rootReducer from '../reducers';
 import QuestionContent from '../containers/QuestionContent';
 import { configureStore } from '../store';
-class Root extends Component {
-    render() {
-      return (
-          <div>
+// class Root extends Component {
+//     render() {
+//       return (
+//           <div>
+//             <Provider store={configureStore()}>
+//               <Router>
+//                   <div>
+//                 <Route exact path='/' component={App} />
+//                 <Route path='/question' component={QuestionContent} />
+//                 </div>
+//               </Router>
+//             </Provider>
+//           </div>
+//       );
+//     }
+//   };
+const Root = () => (
+  <div>
             <Provider store={configureStore()}>
               <Router>
                   <div>
@@ -19,7 +33,5 @@ class Root extends Component {
               </Router>
             </Provider>
           </div>
-      );
-    }
-  };
+)
 export default Root;

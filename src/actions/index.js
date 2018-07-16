@@ -2,7 +2,7 @@ export const CHANGE_GAME_MODE = "CHANGE_GAME_MODE";
 export const ANSWER_QUESTION = "ANSWER_QUESTION";
 export const REQUEST_COUNTRY_DATA = "REQUEST_COUNTRY_DATA";
 export const RECEIVE_COUNTRY_DATA = "RECEIVE_COUNTRY_DATA";
-export const SCORE = "SCORE";
+export const ADDPOINT = "ADDPOINT";
 export const GAME_MODE = {
     START: "START",
     COUNTRY_TO_CAPITAL: "COUNTRY_TO_CAPITAL"
@@ -28,7 +28,7 @@ export const fetchCountries = gameMode => dispatch => {
 }
 export const goToNextQuestion = number => ({type: GO_TO_NEXT_QUESTION, number});
 export const changeGameMode = gameMode => ({type: CHANGE_GAME_MODE, gameMode});
-export const showScore = score => ({type: SCORE, score});
+export const addPoint = score => ({type: ADDPOINT, score});
 
 
 

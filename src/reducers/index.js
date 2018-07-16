@@ -1,5 +1,5 @@
 import { CHANGE_GAME_MODE, ANSWER_QUESTION, REQUEST_COUNTRY_DATA, RECEIVE_COUNTRY_DATA,
-SCORE, GAME_MODE, GO_TO_NEXT_QUESTION } from '../actions';
+ADDPOINT, GAME_MODE, GO_TO_NEXT_QUESTION } from '../actions';
 import { combineReducers } from '../../node_modules/redux';
 import shuffle from 'shuffle-array';
 import { reducer as formReducer } from "redux-form";
@@ -27,9 +27,9 @@ function showData(state=[], action){
                     answer: countryData[index].capital,
                     allChoices: shuffle([
                         countryData[index].capital,
-                        countryData[10].capital,
-                        countryData[11].capital,
-                        countryData[12].capital
+                        countryData[index + 10].capital,
+                        countryData[index + 20].capital,
+                        countryData[index + 30].capital
                     ])
                 }
             });
@@ -37,17 +37,41 @@ function showData(state=[], action){
         default: return state;
     }
 }
-function showCurrentQuestion(state=0, action){
+// function showCurrentQuestion(state=0, action){//try to make arrow function here
+//     switch(action.type){
+//         case GO_TO_NEXT_QUESTION:
+//             return state+1;
+//         default: return state;
+//     }
+// }
+const showCurrentQuestion = (state=0, action) => {
     switch(action.type){
         case GO_TO_NEXT_QUESTION:
             return state+1;
         default: return state;
     }
 }
+// function showScore(state=0, action){//try to make arrow function here
+//     switch(action.type){
+//         case ADDPOINT:
+//             return state+1;
+//         default: return state;
+            
+//     }
+// }
+const showScore = (state=0, action) => {
+    switch(action.type){
+        case ADDPOINT:
+            return state+1;
+        default: return state;
+            
+    }
+}
 const rootReducer = combineReducers({
     selectedGameMode,
     showData,
     showCurrentQuestion,
+    showScore,
     form: formReducer
 });
 export default rootReducer;

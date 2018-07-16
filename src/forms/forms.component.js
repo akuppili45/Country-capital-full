@@ -2,10 +2,8 @@ import React from "react";
 import { Field } from "redux-form";
 // import Text from "../components/text";
 import Radio from "../components/radio";
-export const FormComponent = ({ handleSubmit, onSubmit, choices, answerIsCorrect }) => {
-  if(answerIsCorrect){
-    console.log("Correct!!!");
-  }
+export const FormComponent = ({ handleSubmit, onSubmit, choices, score }) => {
+
   return (
     <div>  
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -21,6 +19,7 @@ export const FormComponent = ({ handleSubmit, onSubmit, choices, answerIsCorrect
         />
         <button type="submit">Submit</button>
       </form>
+      <div>Score: {score}</div>
     </div>
   );
 };
