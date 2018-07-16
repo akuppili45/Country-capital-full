@@ -11,15 +11,13 @@ let FormContainer = props => {
         //props.goNext(props.currentQuestion)
         console.log('next')
     };
-    return <FormComponent onSubmit={submitForm} handleSubmit={props.handleSubmit} choices={props.choices} score={props.currentScore}/>;
+    // console.log(props)
+    return <FormComponent onSubmit={submitForm} handleSubmit={props.handleSubmit} questions={props.questions}/>;
+    // return <div></div>
 };
 const mapStateToProps = state => {
-    const valuesExists = state.form.hasOwnProperty('myForm') && state.form.myForm.hasOwnProperty('values') && state.form.myForm.hasOwnProperty('submitSucceeded');
     return {
-        choices: state.showData[state.showCurrentQuestion].allChoices, 
-        answerIsCorrect: valuesExists ? state.form.myForm.values.answerChosen === state.showData[state.showCurrentQuestion].answer : false,
-        currentQuestion: state.showCurrentQuestion,
-        currentScore: state.showScore
+        questions: state.showData
     }
 };
 const mapDispatchToProps = dispatch => ({addPoint: score => dispatch(addPoint(score)), goNext: questionNum => dispatch(goToNextQuestion(questionNum)), clear: form => dispatch()});

@@ -2,24 +2,40 @@ import React from "react";
 import { Field } from "redux-form";
 // import Text from "../components/text";
 import Radio from "../components/radio";
-export const FormComponent = ({ handleSubmit, onSubmit, choices, score }) => {
 
+const FullQuestion = ({questions, index}) => {
+  const questionContent = questions[index];
+  return (
+  <div>
+    <h1>{questionContent.question}</h1>
+    <div>
+    <Field
+          name={`answerChosen${index}`}
+          component={Radio}
+          options={{
+            [questionContent.allChoices[0]]: questionContent.allChoices[0],
+            [questionContent.allChoices[1]]: questionContent.allChoices[1],
+            [questionContent.allChoices[2]]: questionContent.allChoices[2],
+            [questionContent.allChoices[3]]: questionContent.allChoices[3]
+          }}
+        />
+      </div>
+  </div>
+  )
+
+}
+// const QuestionList = Array(10).fill().map((val, index) => )
+export const FormComponent = ({ handleSubmit, onSubmit, questions}) => {
+  // console.log('questions: ')
+  // console.log(questions);
+  const questionList = Array(10).fill().map((val,i) => <FullQuestion key={i}questions={questions} index={i} />)
   return (
     <div>  
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Field
-          name="answerChosen"
-          component={Radio}
-          options={{
-            [choices[0]]: choices[0],
-            [choices[1]]: choices[1],
-            [choices[2]]: choices[2],
-            [choices[3]]: choices[3]
-          }}
+        {questionList}
         />
         <button type="submit">Submit</button>
       </form>
-      <div>Score: {score}</div>
     </div>
   );
 };
