@@ -1,18 +1,49 @@
 import { CHANGE_GAME_MODE, ANSWER_QUESTION, REQUEST_COUNTRY_DATA, RECEIVE_COUNTRY_DATA,
-ADDPOINT, GAME_MODE, GO_TO_NEXT_QUESTION } from '../actions';
+ADDPOINT, GAME_MODE, GO_TO_NEXT_QUESTION, CLEAR_FORM } from '../actions';
 import { combineReducers } from '../../node_modules/redux';
 import shuffle from 'shuffle-array';
 import { reducer as formReducer } from "redux-form";
 
-function selectedGameMode(state=GAME_MODE.START, action){
+// function selectedGameMode(state=GAME_MODE.START, action){
+//     switch(action.type){
+//         case CHANGE_GAME_MODE:
+//             return action.gameMode;
+//         default: return state;
+//     }
+// }
+const selectedGameMode = (state=GAME_MODE.START, action) => {
     switch(action.type){
         case CHANGE_GAME_MODE:
             return action.gameMode;
         default: return state;
     }
 }
-
-function showData(state=[], action){
+// function showData(state=[], action){
+//     switch(action.type){
+//         case RECEIVE_COUNTRY_DATA:
+//             // let countryData = Array(action.countries.length).fill().map((country, index) => country.name );
+//             let countryData = action.countries.map(country => {
+//                 return {country: country.name, capital: country.capital }
+//             });
+//             countryData = countryData.filter(country => country.capital != "");
+//             countryData = shuffle(countryData);
+//             let questionsAndRightAnswers = Array(10).fill().map((invalid, index) => {     
+//                 return {
+//                     question: countryData[index].country,
+//                     answer: countryData[index].capital,
+//                     allChoices: shuffle([
+//                         countryData[index].capital,
+//                         countryData[index + 10].capital,
+//                         countryData[index + 20].capital,
+//                         countryData[index + 30].capital
+//                     ])
+//                 }
+//             });
+//             return questionsAndRightAnswers;
+//         default: return state;
+//     }
+// }
+const showData = (state=[], action) => {
     switch(action.type){
         case RECEIVE_COUNTRY_DATA:
             // let countryData = Array(action.countries.length).fill().map((country, index) => country.name );
@@ -51,6 +82,7 @@ const showCurrentQuestion = (state=0, action) => {
         default: return state;
     }
 }
+
 // function showScore(state=0, action){//try to make arrow function here
 //     switch(action.type){
 //         case ADDPOINT:

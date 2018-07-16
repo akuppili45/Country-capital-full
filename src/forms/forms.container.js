@@ -5,10 +5,11 @@ import { connect } from 'react-redux';
 import {addPoint, goToNextQuestion} from '../actions';
 let FormContainer = props => {
     const submitForm = formValues => {
-        if(props.answerIsCorrect){
-            console.log("the answer is deffinetley correct")
-        }
-        props.goNext(props.currentQuestion)
+        // if(props.answerIsCorrect){
+        //     console.log("the answer is deffinetley correct")
+        // }
+        //props.goNext(props.currentQuestion)
+        console.log('next')
     };
     return <FormComponent onSubmit={submitForm} handleSubmit={props.handleSubmit} choices={props.choices} score={props.currentScore}/>;
 };
@@ -21,7 +22,7 @@ const mapStateToProps = state => {
         currentScore: state.showScore
     }
 };
-const mapDispatchToProps = dispatch => ({addPoint: score => dispatch(addPoint(score)), goNext: questionNum => dispatch(goToNextQuestion(questionNum))});
+const mapDispatchToProps = dispatch => ({addPoint: score => dispatch(addPoint(score)), goNext: questionNum => dispatch(goToNextQuestion(questionNum)), clear: form => dispatch()});
 FormContainer = connect(mapStateToProps, mapDispatchToProps)(FormContainer);
 
 export default reduxForm({ form: "myForm" })(FormContainer);

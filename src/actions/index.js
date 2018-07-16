@@ -10,6 +10,7 @@ export const GAME_MODE = {
 export const SELECT_ANSWER = "SELECT_ANSWER";
 export const SUBMIT_ANSWER = "SUBMIT_ANSWER";
 export const GO_TO_NEXT_QUESTION = "GO_TO_NEXT_QUESTION";
+export const CLEAR_FORM = "CLEAR_FORM"
 export const requestCountries = gameMode => ({type: REQUEST_COUNTRY_DATA, gameMode});
 
 export const receiveCountries = (gameMode, json) => ({
@@ -29,6 +30,7 @@ export const fetchCountries = gameMode => dispatch => {
 export const goToNextQuestion = number => ({type: GO_TO_NEXT_QUESTION, number});
 export const changeGameMode = gameMode => ({type: CHANGE_GAME_MODE, gameMode});
 export const addPoint = score => ({type: ADDPOINT, score});
+export const clearTheForm = form => ({type: CLEAR_FORM, form});
 
 
 
