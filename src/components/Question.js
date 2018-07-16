@@ -7,7 +7,7 @@ const Question = props => {
     return(
         <div>
         <h1>{props.question}</h1>
-        <FormContainer />
+        <FormContainer /> {/*add props either to FormContainer or somewhere else*/}
         </div>
     );
 };

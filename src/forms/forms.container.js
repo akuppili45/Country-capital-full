@@ -1,11 +1,15 @@
 import React from "react";
 import { reduxForm } from "redux-form";
 import FormComponent from './forms.component';
-const FormContainer = ({handleSubmit}) => {
+import { connect } from 'react-redux';
+let FormContainer = props => {
     const submitForm = formValues => {
         console.log("submitting Form: ", formValues);
     };
     // return <div />
-    return <FormComponent onSubmit={submitForm} handleSubmit={handleSubmit}/>;
+    return <FormComponent onSubmit={submitForm} handleSubmit={props.handleSubmit} choices={props.choices}/>;
 };
-export default reduxForm({ form: "my form" })(FormContainer);
+const mapStateToProps = state => ({choices: state.showData[state.showCurrentQuestion].allChoices});
+FormContainer = connect(mapStateToProps)(FormContainer);
+
+export default reduxForm({ form: "myForm" })(FormContainer);

@@ -2,19 +2,18 @@ import React from "react";
 import { Field } from "redux-form";
 // import Text from "../components/text";
 import Radio from "../components/radio";
-export const FormComponent = ({ handleSubmit, onSubmit }) => {
+export const FormComponent = ({ handleSubmit, onSubmit, choices }) => {
   return (
-    <div>
-      <h1>My Very own Form</h1>
+    <div>  
       <form onSubmit={handleSubmit(onSubmit)}>
         <Field
-          name="spiceLevel"
-          label="Spice Level"
+          name="answerChosen"
           component={Radio}
           options={{
-            mild: "Mild",
-            medium: "Medium",
-            hot: "hot"
+            [choices[0]]: choices[0],
+            [choices[1]]: choices[1],
+            [choices[2]]: choices[2],
+            [choices[3]]: choices[3]
           }}
         />
         <button type="submit">Submit</button>
