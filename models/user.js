@@ -19,12 +19,12 @@ const userSchema = new mongoose.Schema({
     profileImageUrl: {
         type: String
     },
-    scores: { //array of scores and last element of the array is the most recent score
-        type: Array
-    },
-    highScore: {
-        type: Number
-    }
+    scores: [//array of objectIds of scores and last element of the array is the most recent score
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Score"
+        }
+    ]
 });
 
 userSchema.pre("save", async function(next){ //right before we run this document, run an async function

@@ -33,8 +33,12 @@ exports.signup = async function(req, res, next){
     try{
         //create a user
         let user = await db.User.create(req.body); //forgot to put await here
+        //console.log(user.id);
+        console.log(user);
+        console.log(user._id);
+        console.log(user.id);
         let { id, username, profileImageUrl } = user;
-        let token = jwt.sign({
+        let token = jwt.sign({ //creates a json web token for the inputted payload which is the object inside the sign
             id,
             username,
             profileImageUrl
