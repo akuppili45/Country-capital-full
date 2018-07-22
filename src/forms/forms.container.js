@@ -10,8 +10,8 @@ let FormContainer = props => {
         const { pickedAnswers } = props;
         const { questions } = props;
         const correctAnswers = questions.map(content => content.answer);
-        console.log(correctAnswers)
-        console.log(pickedAnswers)
+        console.log(correctAnswers.filter(value => -1 !== pickedAnswers.indexOf(value)).length)// this is the score
+
     };
     // console.log(props)
     return <FormComponent onSubmit={submitForm} handleSubmit={props.handleSubmit} questions={props.questions}/>;
