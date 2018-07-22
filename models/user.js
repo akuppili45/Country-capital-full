@@ -21,7 +21,7 @@ const userSchema = new mongoose.Schema({
     },
     scores: [//array of objectIds of scores and last element of the array is the most recent score
         {
-            type: mongoose.Schema.Types.ObjectId,
+            type: Number,
             ref: "Score"
         }
     ]

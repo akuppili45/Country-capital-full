@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router({mergeParams: true});
 
-const { addScore, getScore } = require('../handlers/scores');
+const { addScore, getAllScores } = require('../handlers/scores');
 router.route('/').post(addScore);
-router.route('/:score_id').get(getScore);
+router.route('/').get(getAllScores);
 module.exports = router;

@@ -7,8 +7,8 @@ exports.addScore = async function(req, res, next){
             user: req.params.id
         });
         let foundUser = await db.User.findById(req.params.id);
-        foundUser.scores.push(newScore.id);
-        await foundUser.save();
+        foundUser.scores.push(newScore.score);
+        //await foundUser.save();
         let foundScore = await db.Score.findById(newScore._id).populate("user", {
             username: true,
             profileImageUrl: true
@@ -20,14 +20,19 @@ exports.addScore = async function(req, res, next){
     }
 };
 // /api/users/:id/scores/:score_id
-exports.getScore = async function(req, res, next){
+// exports.getScore = async function(req, res, next){
+//     try {
+//         let score = await db.Score.findById(req.params.score_id);
+//         return res.status(200).json(score);
+//     } catch (err) {
+//         return next(err);
+//     }
+// };
+exports.getAllScores = async function(req, res, next){
     try {
-        let score = await db.Score.findById(req.params.score_id);
-        return res.status(200).json(score);
+        let scores = await db.Score.find({user: req.params.id});
+        return res.status(200).json(scores);
     } catch (err) {
         return next(err);
     }
-};
-exports.getAllScores = async function(req, res, next){
-        
 };
