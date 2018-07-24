@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+import { fetchScores } from '../store/actions/scores';
+import ScoreList from '../containers/ScoreList';
 const Homepage = ({ currentUser }) => {
     if(!currentUser.isAuthenticated)
     {
@@ -17,7 +18,18 @@ const Homepage = ({ currentUser }) => {
     return (
         <div>
             You made it
+            <ScoreList />
         </div>
        )
 };
+// class Homepage extends Component{
+//     componentWillMount(){
+//         fetchScores("5b55d8c6c03acc0eec0c686c")
+//     }
+//     render(){
+//         return (
+//             <div></div>
+//         );
+//     }
+// }
 export default Homepage;

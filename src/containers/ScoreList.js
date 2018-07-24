@@ -4,11 +4,17 @@ import { fetchScores } from '../store/actions/scores';
 
 class ScoreList extends Component{
     componentDidMount(){
-        this.props.fetchScores()
+        fetch("http://localhost:8081").then(res => {
+            return res.json();
+          }).then(data => {
+              console.log(data);
+          }).catch(err =>{
+              console.log(err);
+          })
     }
     render(){
-        const { scores } = this.props;
-        console.log(scores);
+        // const { scores } = this.props;
+        // console.log(scores);
         return (
             <div>Scoreslist</div>
         )
@@ -16,7 +22,7 @@ class ScoreList extends Component{
 }
 function mapStateToProps(state){
     return {
-        scores: state.currentUser.scores
+        scores: [4,2]
     }
 }
 export default connect(mapStateToProps, { fetchScores })(ScoreList);

@@ -32,7 +32,7 @@ export function authUser(methodType, userData){ //did you ever call dispatch(aut
                 // dispatch(fetchScores(user.id)); //I think this doesn't work because I am not routing it in ReactRouter
                 //You cannot get the scores information with the link you are using in this case it is the sign in link
                 // dispatch(setCurrentUser({...user, scores: [16, 19]}));
-                fetchScores(user.id);
+                // fetchScores(user.id);
                 dispatch(setCurrentUser(user));
                 dispatch(removeError());
                 resolve();

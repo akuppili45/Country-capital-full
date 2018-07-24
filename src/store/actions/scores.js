@@ -9,16 +9,14 @@ export const loadScores = scores => ({
 });
 
 export const fetchScores = (userId) => {
-        return new Promise((resolve, reject) => {
-            return apiCall("GET", `/api/users/${userId}/scores`).then(res => {
-                console.log(res);
-                resolve();
-            }).catch(err => {
-                console.log(err);
-                reject();
-            });
-           
-        })
-    
+    return dispatch => {
+        return apiCall("get", "/")
+          .then(res => {
+            console.log(res);
+          })
+          .catch(err => {
+            console.log(err)
+          });
+      };
     
 }
