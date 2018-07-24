@@ -24,5 +24,3 @@ exports.getQuestions = async function (req, res, next) {
     }    
 }
 
-
-
