@@ -8,6 +8,7 @@ const PORT = 8081;
 const authRoutes = require('./routes/auth');
 const questionRoutes = require('./routes/questions');
 const scoreRoutes = require('./routes/scores');
+const userRoutes = require('./routes/users')
 const { loginRequired, ensureCorrectUser } = require("./middleware/auth");
 
 app.use(cors());
@@ -16,6 +17,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use("/api/auth", authRoutes);
 app.use("/", questionRoutes);
 app.use('/api/users/:id/scores', loginRequired, ensureCorrectUser, scoreRoutes);
+// app.use('/api/users', userRoutes)
 //app.use("/", questionRoutes);
 //errors
 app.use(function(req, res, next){//next: move to the next piece of middeware
