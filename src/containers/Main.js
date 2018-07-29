@@ -6,6 +6,8 @@ import AuthForm from '../components/AuthForm';
 import { authUser, getScores } from '../store/actions/auth';
 import { removeError } from "../store/actions/errors";
 import ScoreList from "../components/ScoreList";
+import withAuth from "../hocs/withAuth";
+import ScoresPage from "../components/ScoresPage";
 //<Switch> is apparently an alternative to <Router>
 const Main = props => {
     const { authUser, errors, removeError, currentUser } = props;
@@ -30,13 +32,11 @@ const Main = props => {
                     }
                     }>
                 </Route>
-                {/* <Route exact path={`/${currentUser.user.id}/scores`} render={props =>
-                    {
-                        return (<ScoreList userId={currentUser.user.id} userScores={getScores} {...props}/>);
-                    }
-                    }>
+                <Route path="/user/scores"
+                       component={withAuth(ScoresPage)}
+                >
 
-                </Route> */}
+                </Route>
             </Switch>
         </div>
     );

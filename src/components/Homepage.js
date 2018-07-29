@@ -17,7 +17,7 @@ const Homepage = ({ currentUser }) => {
     }
     return (
         <div>
-            <ScoreList />
+            <Link to={`/user/scores`}>View Scores</Link>
         </div>
        )
 };
