@@ -3,8 +3,9 @@ import {Switch, Route, withRouter, Redirect} from 'react-router-dom';
 import { connect } from 'react-redux';
 import Homepage from "../components/Homepage";
 import AuthForm from '../components/AuthForm';
-import { authUser } from '../store/actions/auth';
+import { authUser, getScores } from '../store/actions/auth';
 import { removeError } from "../store/actions/errors";
+import ScoreList from "../components/ScoreList";
 //<Switch> is apparently an alternative to <Router>
 const Main = props => {
     const { authUser, errors, removeError, currentUser } = props;
@@ -29,6 +30,13 @@ const Main = props => {
                     }
                     }>
                 </Route>
+                {/* <Route exact path={`/${currentUser.user.id}/scores`} render={props =>
+                    {
+                        return (<ScoreList userId={currentUser.user.id} userScores={getScores} {...props}/>);
+                    }
+                    }>
+
+                </Route> */}
             </Switch>
         </div>
     );

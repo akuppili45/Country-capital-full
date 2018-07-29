@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchScores } from '../store/actions/scores';
-import ScoreList from '../containers/ScoreList';
+import ScoreList from './ScoreList';
 const Homepage = ({ currentUser }) => {
     if(!currentUser.isAuthenticated)
     {
         return (
         <div>
             <h1>What's Happening?</h1>
-            <h4>New to Warbler?</h4>
+            <h4>New to The Country Game?</h4>
             <Link to="/signup">
             Sign up here
             </Link>
@@ -17,7 +17,6 @@ const Homepage = ({ currentUser }) => {
     }
     return (
         <div>
-            You made it
             <ScoreList />
         </div>
        )
