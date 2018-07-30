@@ -1,7 +1,8 @@
 import React from 'react';
+import ScoreList from './ScoreList';
 const ScoresPage = () => {
     return (
-        <div>ScoresPage</div>
+        <div><ScoreList /></div>
     );
 }
 

@@ -12,7 +12,7 @@ class ScoreList extends Component{
         //   }).catch(err =>{
         //       console.log(err);
         //   })
-        apiCall('get', 'api/users/5b55d8c6c03acc0eec0c686c/scores').then(res =>{
+        apiCall('get', 'http://localhost:8081/api/users/5b55d8c6c03acc0eec0c686c/scores').then(res =>{
             console.log(res)
         });
     }
