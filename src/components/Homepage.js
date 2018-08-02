@@ -17,7 +17,7 @@ const Homepage = ({ currentUser }) => {
     }
     return (
         <div>
-            <Link to={`/user/scores`}>View Scores</Link>
+            <Link to={`/users/${currentUser.user.id}/scores`}>View Scores</Link>
         </div>
        )
 };
