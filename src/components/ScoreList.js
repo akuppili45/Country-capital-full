@@ -5,16 +5,10 @@ import axios from 'axios';
 import { apiCall } from '../services/api';
 class ScoreList extends Component{
     componentDidMount(){
-        // fetch("http://localhost:8081").then(res => {
-        //     return res.json();
-        //   }).then(data => {
-        //       console.log(data);
-        //   }).catch(err =>{
-        //       console.log(err);
-        //   })
-        apiCall('get', 'http://localhost:8081/api/users/5b55d8c6c03acc0eec0c686c/scores').then(res =>{
-            console.log(res)
-        });
+        // apiCall('get', 'http://localhost:8081/api/users/5b55d8c6c03acc0eec0c686c/scores').then(res =>{
+        //     console.log(res)
+        // });
+        this.props.fetchScores("5b55d8c6c03acc0eec0c686c");
     }
     render(){
         // const { scores } = this.props;

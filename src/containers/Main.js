@@ -7,7 +7,7 @@ import { authUser, getScores } from '../store/actions/auth';
 import { removeError } from "../store/actions/errors";
 import ScoreList from "../components/ScoreList";
 import withAuth from "../hocs/withAuth";
-import ScoresPage from "../components/ScoresPage";
+import ScoresPage from "./ScoresPage";
 //<Switch> is apparently an alternative to <Router>
 const Main = props => {
     const { authUser, errors, removeError, currentUser } = props;

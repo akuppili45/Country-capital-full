@@ -9,8 +9,10 @@ export const loadScores = scores => ({
 });
 
 export const fetchScores = (userId) => {
-    return dispatch => {
-        return apiCall("get", "/")
+  return dispatch => {
+        // return apiCall("get", `http://localhost:8081/api/users/${userId}/scores`)
+        //added the "/" before "api" in url to make the proxy work. 
+        return apiCall("get", `/api/users/${userId}/scores`)
           .then(res => {
             console.log(res);
           })
