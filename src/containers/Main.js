@@ -32,7 +32,7 @@ const Main = props => {
                     }
                     }>
                 </Route>
-                <Route path={`/users/${currentUser.user.id}/scores`}
+                <Route path={`/users/:id/scores`}
                        component={withAuth(ScoresPage)}
                 >
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { fetchScores } from '../store/actions/scores';
+
+
 import axios from 'axios';
 import { apiCall } from '../services/api';
 class ScoreList extends Component{
@@ -8,7 +8,7 @@ class ScoreList extends Component{
         // apiCall('get', 'http://localhost:8081/api/users/5b55d8c6c03acc0eec0c686c/scores').then(res =>{
         //     console.log(res)
         // });
-        this.props.fetchScores("5b55d8c6c03acc0eec0c686c");
+        this.props.fetchScores(this.props.userId);
     }
     render(){
         // const { scores } = this.props;
@@ -18,10 +18,7 @@ class ScoreList extends Component{
         )
     }
 }
-function mapStateToProps(state){
-    return {
-        scores: [4,2]
-    }
-}
-export default connect(mapStateToProps, { fetchScores })(ScoreList);
+
+export default ScoreList;
+
 
