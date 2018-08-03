@@ -17,6 +17,7 @@ const Homepage = ({ currentUser }) => {
     }
     return (
         <div>
+            {/* <Link to={`/users/${currentUser.user.id}/country-to-capital`}></Link> */}
             <Link to={`/users/${currentUser.user.id}/scores`}>View Scores</Link>
         </div>
        )

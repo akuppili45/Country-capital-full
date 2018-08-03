@@ -37,6 +37,11 @@ const Main = props => {
                 >
 
                 </Route>
+                {/* <Route path={`/users/:id/country-to-capital`}
+                       component={withAuth(CountryToCapital)}
+                >
+
+                </Route> */}
             </Switch>
         </div>
     );
