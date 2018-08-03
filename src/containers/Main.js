@@ -8,6 +8,7 @@ import { removeError } from "../store/actions/errors";
 import ScoreList from "../components/ScoreList";
 import withAuth from "../hocs/withAuth";
 import ScoresPage from "./ScoresPage";
+import Game from "./Game";
 //<Switch> is apparently an alternative to <Router>
 const Main = props => {
     const { authUser, errors, removeError, currentUser } = props;
@@ -37,11 +38,11 @@ const Main = props => {
                 >
 
                 </Route>
-                {/* <Route path={`/users/:id/country-to-capital`}
-                       component={withAuth(CountryToCapital)}
+                <Route path={`/users/:id/country-to-capital`}
+                       component={withAuth(Game)}
                 >
 
-                </Route> */}
+                </Route>
             </Switch>
         </div>
     );
