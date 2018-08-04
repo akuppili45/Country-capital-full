@@ -12,10 +12,18 @@ class Game extends Component{
     }
 
     render(){
-        return (
-            // <CountryToCapital questions={this.props.questions}/>
-            <div></div>
-        );
+        if(this.props.questions.length !== 0){
+            return (
+                <CountryToCapital questions={this.props.questions}/>
+                // <div></div>
+            );
+        }
+        // else{
+            return (
+                <div></div>
+            );
+        // }
+       
     }
 }
 function mapStateToProps(state){
