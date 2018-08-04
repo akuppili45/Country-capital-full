@@ -2,6 +2,8 @@ import { apiCall } from "../../services/api";
 import { SET_CURRENT_USER } from '../actionTypes';
 import { addError, removeError } from './errors';
 import { setTokenHeader } from "../../services/api";
+import { loadScores } from '../actions/scores';
+import { loadQuestions } from '../actions//questions';
 import { fetchScores } from './scores';
 export function setCurrentUser(user){
     return {
@@ -19,6 +21,8 @@ export function logout(){
         localStorage.clear();
         setAuthorizationToken(false);
         dispatch(setCurrentUser({}));
+        dispatch(loadScores([]));
+        //dispatch(loadQuestions({}));
     }
 }
 

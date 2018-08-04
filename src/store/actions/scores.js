@@ -14,7 +14,7 @@ export const fetchScores = (userId) => {
         //added the "/" before "api" in url to make the proxy work. 
         return apiCall("get", `/api/users/${userId}/scores`)
           .then(res => {
-            console.log(res);
+            dispatch(loadScores(res));
           })
           .catch(err => {
             console.log(err)
