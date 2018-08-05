@@ -22,3 +22,10 @@ export const fetchScores = (userId) => {
       };
     
 }
+
+export const postNewScore = (score, id) => {
+  return dispatch =>
+  {return apiCall("post", `/api/users/${id}/scores`, { score })
+    .then(res => {})
+    .catch(err => addError(err.message));}
+}

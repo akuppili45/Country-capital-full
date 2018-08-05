@@ -64,6 +64,7 @@ class CountryToCapital extends Component{
                 );
         }
         else{
+            this.props.postNewScore(this.state.numberCorrect, this.props.userId);
             return (
                 <div>
                     <label>Score: {this.state.numberCorrect}</label>
