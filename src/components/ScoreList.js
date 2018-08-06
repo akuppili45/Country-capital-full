@@ -7,7 +7,16 @@ class ScoreList extends Component{
     // }
     render(){
         if(this.props.scores.length !== 0){ //SUPER IMPORTANT THIS IS Here
-            console.log(this.props.scores);
+            const { scores } = this.props;
+            const scoresListOnPage = scores.map(scoreObj => <li>{scoreObj.score}</li>);
+            return (
+                <div>
+                    Scoreslist
+                    <ul>
+                        {scoresListOnPage}
+                    </ul>
+                </div>
+            );
         }
         
         return (

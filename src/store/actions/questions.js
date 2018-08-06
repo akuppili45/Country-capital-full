@@ -1,6 +1,6 @@
 import { apiCall } from '../../services/api';
 import { LOAD_QUESTIONS } from '../../store/actionTypes'
-
+import { addError } from './errors';
 export const loadQuestions = questions => ({
     type: LOAD_QUESTIONS,
     questions

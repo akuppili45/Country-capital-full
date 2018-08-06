@@ -22,12 +22,7 @@ export function logout(){
         setAuthorizationToken(false);
         dispatch(setCurrentUser({}));
         dispatch(loadScores([]));
-        //dispatch(loadQuestions({}));
     }
-}
-
-export function getScores(){
-    
 }
 
 export function authUser(methodType, userData){ //did you ever call dispatch(authUser)
