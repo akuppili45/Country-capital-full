@@ -17,7 +17,7 @@ export const fetchScores = (userId) => {
             dispatch(loadScores(res));
           })
           .catch(err => {
-            console.log(err)
+            dispatch(addError(err.message));
           });
       };
     

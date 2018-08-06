@@ -14,7 +14,7 @@ export const fetchQuestions = () => {
                 dispatch(loadQuestions(res.quizQuestions));
             })
             .catch(err => {
-                console.log(err);
+                dispatch(addError(err.message));
             });
     }
 }
