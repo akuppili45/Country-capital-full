@@ -18,8 +18,8 @@ const Homepage = ({ currentUser }) => {
     return (
         <div>
             {/* <Link to={`/users/${currentUser.user.id}/country-to-capital`}></Link> */}
-            <Link to={`/users/${currentUser.user.id}/country-to-capital`}>Start Game</Link>
-            <Link to={`/users/${currentUser.user.id}/scores`}>View Scores</Link>
+            <Link to={`/users/${currentUser.user.id}/country-to-capital`} className="btn btn-outline-primary">Start Game</Link>
+            <Link to={`/users/${currentUser.user.id}/scores`} className="btn btn-outline-secondary">View Scores</Link>
         </div>
        )
 };

@@ -9,6 +9,7 @@ class Navbar extends Component {
     }
     render(){
         return (
+         
             <nav style={{margin:"auto"}}>
                 <Link to='/' style={{padding: "15px"}}>Home</Link>
                 { !this.props.currentUser.isAuthenticated ?
@@ -19,10 +20,11 @@ class Navbar extends Component {
                         </div>
                     ) : 
                     (
-                        <a onClick={this.logout} style={{padding: "15px"}}>Log out</a>
+                        <a onClick={this.logout} style={{padding: "15px", height:"50px"}} className="btn btn-outline-danger">Log out</a>
                     )
                 }
             </nav>
+
         );
     }
 }
