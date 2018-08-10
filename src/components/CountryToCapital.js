@@ -32,34 +32,39 @@ class CountryToCapital extends Component{
         }
         if(currentQuestionIndex < 10){
             return (
-                <div>
-                <form>
-                    <h1>{currentQuestionObj.question}</h1>
-                    
-                    <label>
-                        <input type='radio' value={currentQuestionObj.allChoices[0]} checked={this.state.selectedOption === currentQuestionObj.allChoices[0]} onChange={this.handleRadioChange}/>
-                            {currentQuestionObj.allChoices[0]}
-                    </label>
-    
-                    <label>
-                        <input type='radio' value={currentQuestionObj.allChoices[1]} checked={this.state.selectedOption === currentQuestionObj.allChoices[1]} onChange={this.handleRadioChange}/>
-                            {currentQuestionObj.allChoices[1]}
-                    </label>
-    
-                    <label>
-                        <input type='radio' value={currentQuestionObj.allChoices[2]} checked={this.state.selectedOption === currentQuestionObj.allChoices[2]} onChange={this.handleRadioChange}/>
-                            {currentQuestionObj.allChoices[2]}
-                    </label>
-    
-                    <label>
-                        <input type='radio' value={currentQuestionObj.allChoices[3]} checked={this.state.selectedOption === currentQuestionObj.allChoices[3]} onChange={this.handleRadioChange}/>
-                            {currentQuestionObj.allChoices[3]}
-                    </label>
-    
-                    <button onClick={this.handleSubmit}>{buttonText}</button>
-                    
-                </form>
-                <label>Score: {this.state.numberCorrect}</label>
+                <div style={{backgroundColor: "#8FBC8F", height: "100%"}}>
+                <div style={{textAlign:"center"}}>
+                    <form>
+                        <h1>{currentQuestionObj.question}</h1>
+                        
+                        <label>
+                            <input type='radio' value={currentQuestionObj.allChoices[0]} checked={this.state.selectedOption === currentQuestionObj.allChoices[0]} onChange={this.handleRadioChange}/>
+                                {currentQuestionObj.allChoices[0]}
+                        </label>
+        
+                        <label>
+                            <input type='radio' value={currentQuestionObj.allChoices[1]} checked={this.state.selectedOption === currentQuestionObj.allChoices[1]} onChange={this.handleRadioChange}/>
+                                {currentQuestionObj.allChoices[1]}
+                        </label>
+        
+                        <label>
+                            <input type='radio' value={currentQuestionObj.allChoices[2]} checked={this.state.selectedOption === currentQuestionObj.allChoices[2]} onChange={this.handleRadioChange}/>
+                                {currentQuestionObj.allChoices[2]}
+                        </label>
+        
+                        <label>
+                            <input type='radio' value={currentQuestionObj.allChoices[3]} checked={this.state.selectedOption === currentQuestionObj.allChoices[3]} onChange={this.handleRadioChange}/>
+                                {currentQuestionObj.allChoices[3]}
+                        </label>
+        
+                        <button onClick={this.handleSubmit}>{buttonText}</button>
+                        
+                    </form>
+                    <label>Score: {this.state.numberCorrect}</label>
+                </div>
+                <div style={{textAlign: "center", height: "560px"}}> {/* 560px */}
+                <img src={currentQuestionObj.flag} style={{height:"500px"}}/>
+            </div>
                 </div>
                 );
         }

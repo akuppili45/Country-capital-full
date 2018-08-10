@@ -8,6 +8,7 @@ class Navbar extends Component {
         this.props.logout();
     }
     render(){
+        const { currentUser } = this.props;
         return (
          
             <nav style={{margin:"auto", backgroundColor: "#90EE90"}} className="navbar navbar-expand">
@@ -25,7 +26,10 @@ class Navbar extends Component {
                         // </div>
                     ) : 
                     (
-                        <a onClick={this.logout} style={{padding: "15px", height:"50px"}} className="btn btn-outline-danger">Log out</a>
+                        <div>
+                            <Link to={`/users/${currentUser.user.id}/scores`} className="btn btn-outline-secondary">View Scores</Link>
+                            <a onClick={this.logout}  className="btn btn-outline-danger">Log out</a>
+                        </div>
                     )
                 }
                 </div>
