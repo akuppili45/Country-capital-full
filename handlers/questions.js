@@ -15,7 +15,8 @@ exports.getQuestions = async function (req, res, next) {
                     countryData[index + 10].capital,
                     countryData[index + 20].capital,
                     countryData[index + 30].capital
-                ])
+                ]),
+                flag: countryData[index].flag
             }
         });
        return res.status(200).json({quizQuestions: questionAnswer});
