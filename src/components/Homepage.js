@@ -1,18 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { fetchScores } from '../store/actions/scores';
-import ScoreList from './ScoreList';
+
 const Homepage = ({ currentUser }) => {
+    const buttonStyle = {
+        width: "100px",
+        margin: "auto"
+    };
     if(!currentUser.isAuthenticated)
     {
         return (
-        <div>
-            <h1>What's Happening?</h1>
-            <h4>New to The Country Game?</h4>
-            <Link to="/signup">
+    <div>
+        <div style={{backgroundColor: "#20B2AA"}}>
+            <h1 class="d-flex justify-content-center" style={{paddingTop: "70px", paddingBottom: "10px"}}>What's Happening?</h1>
+            <h4 class="d-flex justify-content-center" style={{paddingBottom: "10px"}}>New to The Country Game?</h4>
+            <div style={buttonStyle}>
+            <Link to="/signup" className={`btn btn-primary`}>
             Sign up here
             </Link>
+            </div>
         </div>
+    </div>
        )
     }
     return (

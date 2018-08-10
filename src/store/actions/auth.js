@@ -3,8 +3,7 @@ import { SET_CURRENT_USER } from '../actionTypes';
 import { addError, removeError } from './errors';
 import { setTokenHeader } from "../../services/api";
 import { loadScores } from '../actions/scores';
-import { loadQuestions } from '../actions//questions';
-import { fetchScores } from './scores';
+
 export function setCurrentUser(user){
     return {
         type: SET_CURRENT_USER,

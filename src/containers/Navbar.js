@@ -10,7 +10,7 @@ class Navbar extends Component {
     render(){
         return (
          
-            <nav style={{margin:"auto"}} className="navbar navbar-expand">
+            <nav style={{margin:"auto", backgroundColor: "#90EE90"}} className="navbar navbar-expand">
               <div className="container-fluid">
                 <Link to='/' style={{padding: "15px"}} className="navbar-brand">Home</Link>
                 { !this.props.currentUser.isAuthenticated ?

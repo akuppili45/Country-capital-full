@@ -4,9 +4,6 @@ import { postNewScore } from '../store/actions/scores';
 import { connect } from 'react-redux';
 import CountryToCapital from '../components/CountryToCapital';
 class Game extends Component{
-    constructor(props){
-        super(props);
-    }
     componentDidMount(){
         this.props.fetchQuestions(); //return an array NOT an object and then pass the ARRAY to <CountryToCapital> component
     }
