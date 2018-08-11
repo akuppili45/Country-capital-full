@@ -36,6 +36,7 @@ export default class AuthForm extends Component {
             removeError();
         });
         return(
+            <div className="row justify-content-md-center text-center">
             <form onSubmit={this.handleSubmit}>
                 <h2>{heading}</h2>
                 {/* {errors.message && <div className="alert alert-danger"style={alertStyle}>{errors.message}</div>} */}
@@ -47,6 +48,7 @@ export default class AuthForm extends Component {
                 type="text" 
                 onChange={this.handleChange}
                 value={email}
+                className="form-control"
                 >
                 </input>
                 <label>Password</label>
@@ -56,6 +58,7 @@ export default class AuthForm extends Component {
                 type="password" 
                 onChange={this.handleChange}
                 value={password}
+                className="form-control"
                 >
                 </input>
                 {signUp && (
@@ -67,6 +70,7 @@ export default class AuthForm extends Component {
                 type="text" 
                 onChange={this.handleChange}
                 value={username}
+                className="form-control"
                 >
                 </input>
                 <label>Image</label>
@@ -76,12 +80,14 @@ export default class AuthForm extends Component {
                 type="text" 
                 onChange={this.handleChange}
                 value={profileImageUrl}
+                className="form-control"
                 >
                 </input>
             </div>
                 )}
-            <button type="submit">{buttonText}</button>
+            <button type="submit" className="btn btn-success">{buttonText}</button>
             </form>
+            </div>
         );
     }
 }

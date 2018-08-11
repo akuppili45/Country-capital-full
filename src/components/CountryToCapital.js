@@ -38,7 +38,7 @@ class CountryToCapital extends Component{
                         <h1>{currentQuestionObj.question}</h1>
                         
                         <label>
-                            <input type='radio' value={currentQuestionObj.allChoices[0]} checked={this.state.selectedOption === currentQuestionObj.allChoices[0]} onChange={this.handleRadioChange}/>
+                            <input type='radio' value={currentQuestionObj.allChoices[0]} checked={this.state.selectedOption === currentQuestionObj.allChoices[0]} onChange={this.handleRadioChange} style={{backgroundColor: "blue"}}/>
                                 {currentQuestionObj.allChoices[0]}
                         </label>
         
