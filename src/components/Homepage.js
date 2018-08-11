@@ -20,7 +20,7 @@ const Homepage = ({ currentUser }) => {
             </Link>
             </div>
         </div>
-        <div style={{textAlign: "center"}}>
+        <div style={{textAlign: "center", backgroundColor: "#8FBC8F"}}>
         <img src="http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/globe-icon.png" style={imgStyle}/>
         </div>
     </div>
