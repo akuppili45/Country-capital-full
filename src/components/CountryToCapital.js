@@ -38,7 +38,7 @@ class CountryToCapital extends Component{
                 <div style={{textAlign:"center"}}>
                     <form>
                         <h1>{currentQuestionObj.question}</h1>
-                    <div>
+                    <div style={{margin: "auto"}}>
                         <div>    
                             <label class="container">
                                 <input type='radio' value={currentQuestionObj.allChoices[0]} checked={this.state.selectedOption === currentQuestionObj.allChoices[0]} onChange={this.handleRadioChange} style={{backgroundColor: "blue"}}/>
